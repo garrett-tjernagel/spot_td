@@ -1,0 +1,17 @@
+Board: 
+    Rpi Zero W 
+Power:
+    Battery
+    regulator
+    booster
+    charger
+Control:
+    Buttons
+    switches
+    dial
+Audio:
+    1/8" jack
+    Bluetooth
+Connections:
+    Wifi
+    Bluetooth

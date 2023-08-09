@@ -1,4 +1,9 @@
 Figured a place for links would be good:
 
+Guys Original Project: https://github.com/dupontgu/retro-ipod-spotify-client
+
 PI Zero W board Initial Setup and overview: https://learn.sparkfun.com/tutorials/getting-started-with-the-raspberry-pi-zero-wireless/all
 
+Remote Access to PI boards: https://www.raspberrypi.com/documentation/computers/remote-access.html#vnc
+
+How to teardown an iPod nano 4th gen: https://www.ifixit.com/Teardown/iPod+Nano+4th+Generation+Teardown/584

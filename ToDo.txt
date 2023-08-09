@@ -1,0 +1,13 @@
+[ ] : Get Pi Setup
+    [ ] : Get the image done 
+    [ ] : get the board booted
+    [ ] : get wireless connection setup from computer to board for dev
+
+[ ] : Get Audio setup
+    [ ] : Get bluetooth connectivity working
+    [ ] : test playing on bluetooth speaker
+    [ ] : test playing on headphones
+
+[ ] : Get Spotify running
+    [ ] : start small and jst get it connected to the account
+    [ ] : then move on to playing songs

@@ -1,0 +1,5 @@
+Chucking this here to keep my notes on tkinter coherent.
+
+Using this site: https://dev.to/jothinkumar/getting-started-with-tkinter-crash-course-5a7m
+
+Another one: https://silo.tips/download/python-crash-course-guis-with-tkinter
