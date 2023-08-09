@@ -1,0 +1,4 @@
+Figured a place for links would be good:
+
+PI Zero W board Initial Setup and overview: https://learn.sparkfun.com/tutorials/getting-started-with-the-raspberry-pi-zero-wireless/all
+
