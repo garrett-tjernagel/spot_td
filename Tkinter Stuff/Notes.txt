@@ -1,0 +1,2 @@
+This is the first time ive done tkinter so its going to be a long learning process to get anything done. 
+That being said, there'll be a few files in here purely for learning tkinter
