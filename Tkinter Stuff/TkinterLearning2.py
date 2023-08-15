@@ -6,15 +6,6 @@ c_spotify_green = '#1DB954'
 c_black = '#000000'
 c_white = '#FFFFFF'
 
-border_effects = {
-    "flat": tk.FLAT,
-    "sunken": tk.SUNKEN,
-    "raised": tk.RAISED,
-    "groove": tk.GROOVE,
-    "ridge": tk.RIDGE,
-}
-
-
 class pages(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
@@ -54,42 +45,69 @@ class HomePage(tk.Frame):  # Can go to Connections, Nav, and Settings
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         
-        label = tk.Label(
+        home_page_label = tk.Label(
             self,
             text="Home Page",
             bg=c_black,
             fg=c_spotify_green
         )
-        label.pack(side="top",padx=10, pady=10)
-
-        #Main Containter
-        home_nav_container = tk.Frame(self)
         
-        # We use the switch_window_button in order to call the show_frame() method as a lambda function
-        go_to_settings_page = tk.Button(
-            master=home_nav_container,
-            text="Go to the Settings Page",
-            command=lambda: controller.show_frame(SettingsPage),
-            
-        )
-        go_to_settings_page.pack(side="bottom", fill=tk.X)
+        #Main Menu Container
+        home_nav_container = tk.Frame(self)
+        #------------------------------------------------------------
+        connections_disp_ctrl_container = tk.Frame(master=home_nav_container)
 
-        go_to_connections_page = tk.Button(
-            master=home_nav_container,
+        go_to_connections_page_b = tk.Button(
+            master=connections_disp_ctrl_container,
             text="Go to the Connections Page",
+            width=25,
             command=lambda: controller.show_frame(ConnectionsPage),
         )
-        go_to_connections_page.pack(side="bottom", fill=tk.X)
+        go_to_connections_page_b.pack(side="left", fill=tk.X)
+        go_to_connections_page_l = tk.Label(
+            master=connections_disp_ctrl_container,
+            text="Connections Info Display"
+        )
+        go_to_connections_page_l.pack(side="left", fill=tk.X)
+        
+        connections_disp_ctrl_container.pack(side="top", fill=tk.X)
+        #------------------------------------------------------------
+        settings_disp_ctrl_container = tk.Frame(master=home_nav_container)
+    
+        go_to_settings_page_b = tk.Button(
+            master=settings_disp_ctrl_container,
+            text="Go to the Settings Page",
+            width=25,
+            command=lambda: controller.show_frame(SettingsPage),
+        )
+        go_to_settings_page_b.pack(side="left", fill=tk.X)
 
-        go_to_nav_page = tk.Button(
-            master=home_nav_container,
+        go_to_settings_page_l = tk.Label(
+            master=settings_disp_ctrl_container,
+            text="Settings Info Display",
+        )
+        go_to_settings_page_l.pack(side="left", fill=tk.X)
+
+        settings_disp_ctrl_container.pack(side="top", fill=tk.X)
+        #------------------------------------------------------------
+        nav_disp_ctrl_container = tk.Frame(master=home_nav_container)
+
+        go_to_nav_page_b = tk.Button(
+            master=nav_disp_ctrl_container,
             text="Go to the Nav Page",
+            width=25,
             command=lambda: controller.show_frame(NavPage),
         )
-        go_to_nav_page.pack(side="bottom", fill=tk.X)
-
-        home_nav_container.pack(side='top',fill=tk.X)
-
+        go_to_nav_page_b.pack(side="left", fill=tk.X)
+        go_to_nav_page_l = tk.Label(
+            master=nav_disp_ctrl_container,
+            text="Nav Info Display"
+        )
+        go_to_nav_page_l.pack(side="left", fill=tk.X)
+        
+        nav_disp_ctrl_container.pack(side="top", fill=tk.X)
+        #------------------------------------------------------------
+        
         #Kill Button
         kill_button = tk.Button(
             self,
@@ -98,7 +116,13 @@ class HomePage(tk.Frame):  # Can go to Connections, Nav, and Settings
             fg=c_spotify_green,
             command=controller.destroy,
         )
-        kill_button.pack(side="bottom", fill=tk.X)
+
+        # Frame Packing order 
+        home_page_label.pack(side="top",fill=tk.X)
+        
+        home_nav_container.pack(side='top',fill=tk.X)
+
+        kill_button.pack(side="top", fill=tk.X)
 
 class SettingsPage(tk.Frame):  # Can go to Home
     def __init__(self, parent, controller):
@@ -121,12 +145,12 @@ class SettingsPage(tk.Frame):  # Can go to Home
         kill_button.pack(side="bottom", fill=tk.X)
 
         # We use the switch_window_button in order to call the show_frame() method as a lambda function
-        go_to_home_page = tk.Button(
+        go_to_home_page_b = tk.Button(
             self,
             text="Go to the Home Page",
             command=lambda: controller.show_frame(HomePage),
         )
-        go_to_home_page.pack(side="bottom", fill=tk.X)
+        go_to_home_page_b.pack(side="bottom", fill=tk.X)
 
 class ConnectionsPage(tk.Frame):  # Can go to Home
     def __init__(self, parent, controller):
@@ -149,12 +173,12 @@ class ConnectionsPage(tk.Frame):  # Can go to Home
         kill_button.pack(side="bottom", fill=tk.X)
 
         # We use the switch_window_button in order to call the show_frame() method as a lambda function
-        go_to_home_page = tk.Button(
+        go_to_home_page_b = tk.Button(
             self,
             text="Go to the Home Page",
             command=lambda: controller.show_frame(HomePage),
         )
-        go_to_home_page.pack(side="bottom", fill=tk.X)
+        go_to_home_page_b.pack(side="bottom", fill=tk.X)
 
 class NavPage(tk.Frame):  # Can go to Home
     def __init__(self, parent, controller):
@@ -177,12 +201,12 @@ class NavPage(tk.Frame):  # Can go to Home
         kill_button.pack(side="bottom", fill=tk.X)
 
         # We use the switch_window_button in order to call the show_frame() method as a lambda function
-        go_to_home_page = tk.Button(
+        go_to_home_page_b = tk.Button(
             self,
             text="Go to the Home Page",
             command=lambda: controller.show_frame(HomePage),
         )
-        go_to_home_page.pack(side="bottom", fill=tk.X)
+        go_to_home_page_b.pack(side="bottom", fill=tk.X)
 
         go_to_play_page = tk.Button(
             self,
@@ -212,12 +236,12 @@ class PlayPage(tk.Frame):  # Can go to Home and Nav
         kill_button.pack(side="bottom", fill=tk.X)
 
         # We use the switch_window_button in order to call the show_frame() method as a lambda function
-        go_to_nav_page = tk.Button(
+        go_to_nav_page_b = tk.Button(
             self,
             text="Go to the Nav Page",
             command=lambda: controller.show_frame(NavPage),
         )
-        go_to_nav_page.pack(side="bottom", fill=tk.X)
+        go_to_nav_page_b.pack(side="bottom", fill=tk.X)
 
 # Launches Main
 app = pages()
