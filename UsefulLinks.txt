@@ -7,3 +7,6 @@ PI Zero W board Initial Setup and overview: https://learn.sparkfun.com/tutorials
 Remote Access to PI boards: https://www.raspberrypi.com/documentation/computers/remote-access.html#vnc
 
 How to teardown an iPod nano 4th gen: https://www.ifixit.com/Teardown/iPod+Nano+4th+Generation+Teardown/584
+
+Tkinter dynamic resizing: https://peakd.com/python/@codemy/dynamically-resize-background-images-python-tkinter-gui-tutorial-148
+
