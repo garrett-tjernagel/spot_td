@@ -1,2 +1,12 @@
 This is the first time ive done tkinter so its going to be a long learning process to get anything done. 
 That being said, there'll be a few files in here purely for learning tkinter
+
+I want this to be as simple as possible while also looking somewhat polished.
+Im not going for optimum performance unless sound quality is hampered in some fashion. 
+
+main controller class that has a callback to toggle which frame is in view between:
+    Home Page
+    BT Connections Page
+    Settings Page
+    Nav Page
+    Play Page

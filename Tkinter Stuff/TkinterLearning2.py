@@ -1,5 +1,9 @@
 import tkinter as tk
 import tkinter.ttk as ttk
+import PIL.Image as im
+import PIL.ImageTk as imtk
+
+
 
 # Colors
 c_spotify_green = '#1DB954'
@@ -15,6 +19,9 @@ header_label_width = 40
 
 info_label_height = 3
 info_label_width = 20
+
+button_image_size = 50
+
 class pages(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
@@ -53,6 +60,15 @@ class HomePage(tk.Frame):  # Can go to Connections, Nav, and Settings
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         
+        #Images
+        self.btlImg = im.open("C:/Data/spot_td/Tkinter Stuff/Pictures/btlogo.png").resize((button_image_size, button_image_size), im.ANTIALIAS)
+        self.navImg = im.open("C:/Data/spot_td/Tkinter Stuff/Pictures/playpause.png").resize((button_image_size, button_image_size), im.ANTIALIAS)
+        self.setImg = im.open("C:/Data/spot_td/Tkinter Stuff/Pictures/settingwheel.png").resize((button_image_size, button_image_size), im.ANTIALIAS)
+
+        self.btlImg = imtk.PhotoImage(self.btlImg)
+        self.navImg = imtk.PhotoImage(self.navImg)
+        self.setImg = imtk.PhotoImage(self.setImg)
+
         #Bins
         btBin = tk.Frame(self)
         settingsBin = tk.Frame(self)
@@ -103,35 +119,41 @@ class HomePage(tk.Frame):  # Can go to Connections, Nav, and Settings
         #Buttons
         B_goToConnectionsPage = tk.Button(
             btBin,
+            compound='center',
             text="B: Go to Connections Page",
-            bg=c_black,
+            #bg=c_black,
             fg=c_spotify_green,
             padx=button_pad,
             pady=button_pad/2,
-            height=info_label_height,
-            width=info_label_width,
+            height=button_image_size/2,
+            width=button_image_size/2,
+            image=self.btlImg,
             command=lambda: controller.show_frame(ConnectionsPage),
         )
         B_goToNavigationPage = tk.Button(
             navBin,
+            compound='center',
             text="B: Go to Nav Page",
-            bg=c_black,
+            #bg=c_black,
             fg=c_spotify_green,
             padx=button_pad,
             pady=button_pad/2,
-            height=info_label_height,
-            width=info_label_width,
+            height=button_image_size,
+            width=button_image_size,
+            image=self.navImg,
             command=lambda: controller.show_frame(NavPage),
         )
         B_goToSettingsPage = tk.Button(
             settingsBin,
+            compound='center',
             text="B: Go to Settings Page",
-            bg=c_black,
+            #bg=c_black,
             fg=c_spotify_green,
             padx=button_pad,
             pady=button_pad/2,
-            height=info_label_height,
-            width=info_label_width,
+            height=button_image_size,
+            width=button_image_size,
+            image=self.setImg,
             command=lambda: controller.show_frame(SettingsPage),
         )
         B_killMaster = tk.Button(
@@ -162,8 +184,6 @@ class HomePage(tk.Frame):  # Can go to Connections, Nav, and Settings
         settingsBin.pack(side='top',expand=True,fill=tk.BOTH)
         
         B_killMaster.pack(side='top',expand=True,fill=tk.X)
-
-
 
 class SettingsPage(tk.Frame):  # Can go to Home
     def __init__(self, parent, controller):
