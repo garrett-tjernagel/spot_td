@@ -10,3 +10,4 @@ How to teardown an iPod nano 4th gen: https://www.ifixit.com/Teardown/iPod+Nano+
 
 Tkinter dynamic resizing: https://peakd.com/python/@codemy/dynamically-resize-background-images-python-tkinter-gui-tutorial-148
 
+XRDP Guide: https://pimylifeup.com/raspberry-pi-remote-desktop/
