@@ -6,7 +6,7 @@ social media and the plauge that smart phones have on an attention span, but bei
 music head makes it hard for me to go anywhere whithout it since I just want to listen
 to music whereever/whenever I am. 
 
-Seeing the project by Buy Dupont linked below, was the reason for starting this project, 
+Seeing the project by Guy Dupont linked below, was the reason for starting this project, 
 as I now know it can be done. I'm hoping his work can be utilized as as good launch point 
 and I can learn from what he has already done.
 
